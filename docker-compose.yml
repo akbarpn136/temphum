@@ -1,0 +1,49 @@
+version: '3.2'
+services:
+  zookeeper:
+    image: 'zookeeper:latest'
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          - node.labels.label == server1
+    ports:
+      - '2181:2181'
+    #volumes:
+    #  - ./data_zoo:/data
+    #  - ./log_zoo:/datalog
+  kafka1:
+    hostname: kafka1
+    image: 'wurstmeister/kafka:latest'
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          - node.labels.label == server1
+    ports:
+      - '9614:9614'
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_HOST_NAME=kafka1
+      - KAFKA_ADVERTISED_PORT=9614
+      - KAFKA_PORT=9614
+  kafka2:
+    hostname: kafka2
+    image: 'wurstmeister/kafka:latest'
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+          - node.labels.label == server4
+    ports:
+      - '9614'
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_HOST_NAME=kafka2
+      - KAFKA_PORT=9614
+
+  backend_temphum:
+    image: akbarpn136/temphum:latest
+    command: /usr/local/bin/gunicorn -c conf.py temphum.wsgi:api
+    ports:
+      - '9613:8000'
