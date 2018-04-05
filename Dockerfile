@@ -16,4 +16,5 @@ RUN mkdir /var/www && \
     mkdir /var/www/temphum
 
 WORKDIR /var/www/temphum
+COPY . .
 EXPOSE 8000
