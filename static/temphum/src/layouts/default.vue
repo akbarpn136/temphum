@@ -30,8 +30,9 @@
           <q-icon name="fa fa-thermometer-half" /> TempHum <q-icon name="fa fa-heart" color="red"/> Open Source
         </h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Kembangkan aplikasi menggunakan software atau tools open source.
         </p>
+        <iframe class="full-width" height="315" src="https://www.youtube.com/embed/wmvzuYReJDE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </q-modal>
       <router-view />
     </q-page-container>
