@@ -7,6 +7,9 @@
           TempHump
         </q-toolbar-title>
         <div class="group">
+          <q-chip pointing="left" color="primary" small square>
+            SERVER ROOM
+          </q-chip>
           <q-btn flat dense round
             @click="doReload()"
             aria-label="Reload">
