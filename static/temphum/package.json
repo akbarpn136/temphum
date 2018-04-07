@@ -1,8 +1,8 @@
 {
   "name": "temphum",
-  "version": "1.0.0",
-  "description": "TempHum Client App by Quasar",
-  "productName": "TempHum Client App",
+  "version": "1.0.1",
+  "description": "TempHum Client App, powered by open source project",
+  "productName": "TempHum",
   "cordovaId": "com.wordpress.arizalakbarzikri.temphum",
   "author": "akbarpn136 <akbarpn136@gmail.com>",
   "private": true,
