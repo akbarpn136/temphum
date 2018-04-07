@@ -32,7 +32,6 @@
         <p>
           Kembangkan aplikasi menggunakan software atau tools open source.
         </p>
-        <iframe class="full-width" height="315" src="https://www.youtube.com/embed/wmvzuYReJDE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </q-modal>
       <router-view />
     </q-page-container>
